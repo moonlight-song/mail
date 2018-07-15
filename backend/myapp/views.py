@@ -62,9 +62,29 @@ def test (request) :
 	}
 
 	mailing = [
-		{ "name" : "Одежда, обувь, аксессуары", "messages" : getRangedmessages("category", "Одежда, обувь, аксессуары")},
-		{ "name" : "Товары для детей", "messages" : getRangedmessages("category", "Товары для детей")},
-		{ "name" : "Другое", "messages" : getRangedmessages("category", "Другое")},
+		{ 
+            "name" : "Одежда, обувь, аксессуары", 
+            "blocks" : [
+                { "name" : "KUPIVIP.RU", "messages" : getRangedmessages("sender", "KUPIVIP.RU")},
+                { "name" : "Lamoda", "messages" : getRangedmessages("sender", "Lamoda")},
+            ]
+        },
+        
+        { 
+            "name" : "Товары для детей", 
+            "blocks" : [
+                { "name" : "Mamsy Kids", "messages" : getRangedmessages("sender", "Mamsy Kids")},
+                { "name" : "Mothercare", "messages" : getRangedmessages("sender", "Mothercare")},
+            ]
+        },
+        
+        { 
+            "name" : "Другое", 
+            "blocks" : [
+                { "name" : "MediaMarkt", "messages" : getRangedmessages("sender", "MediaMarkt")},
+                { "name" : "Комус", "messages" : getRangedmessages("sender", "Комус")},
+            ]
+        }
 	]
 
 	response = {
