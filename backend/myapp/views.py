@@ -67,6 +67,10 @@ def test (request) :
 		{ "name" : "Другое", "messages" : getRangedmessages("category", "Другое")},
 	]
 
-	response = [actual, hot, mailing]
+	response = {
+        "actual" : actual, 
+        "hot" : hot, 
+        "mailing" : mailing
+    }
 
 	return JsonResponse (response, safe = False)
